@@ -1,0 +1,8 @@
+PyDSSP-master/
+*.zip
+pydssp_*.py
+test_*.py
+pydssp/
+repo.zip
+pydssp-rs/target/
+target/
