@@ -1,0 +1,12 @@
+[package]
+name = "dssp-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ndarray = "0.17.2"
+clap = { version = "4.5.23", features = ["derive"] }
+
+[[bin]]
+name = "dssp"
+path = "src/main.rs"
