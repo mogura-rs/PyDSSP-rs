@@ -1,5 +1,5 @@
 use clap::Parser;
-use pydssp_rs::{assign, read_pdbtext};
+use dssp_rs::{assign, read_pdbtext};
 use ndarray::{Array1, Axis};
 use std::fs;
 use std::io::{self, Write};

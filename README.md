@@ -46,12 +46,12 @@ Add `pydssp-rs` to your `Cargo.toml`.
 
 ```toml
 [dependencies]
-pydssp-rs = { path = "." } # Or git url
-ndarray = "0.15"
+dssp-rs = { git = "https://github.com/mogura-rs/dssp-rs" }
+ndarray = "0.17.2"
 ```
 
 ```rust
-use pydssp_rs::{read_pdbtext, assign};
+use dssp_rs::{read_pdbtext, assign};
 use ndarray::Axis;
 
 fn main() {

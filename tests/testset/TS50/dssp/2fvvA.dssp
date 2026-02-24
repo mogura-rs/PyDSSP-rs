@@ -21,7 +21,7 @@ REFERENCE W. KABSCH AND C.SANDER, BIOPOLYMERS 22 (1983) 2577-2637               
   0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0    PARALLEL BRIDGES PER LADDER      .
   2  1  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0    ANTIPARALLEL BRIDGES PER LADDER  .
   0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0    LADDERS PER SHEET                .
-  #  RESIDUE AA STRUCTURE BP1 BP2  ACC     N-H-->O    O-->H-N    N-H-->O    O-->H-N    TCO  KAPPA ALPHA  PHI   PSI    X-CA   Y-CA   Z-CA
+  #  RESIDUE AA STRUCTURE BP1 BP2  ACC     N-H-->O    O-->H-N    N-H-->O    O-->H-N    TCO  KAPPA ALPHA  PHI   PSI    X-CA   Y-CA   Z-CA 
     1    8 A Q              0   0  171      0, 0.0     2,-0.4     0, 0.0    45,-0.0   0.000 360.0 360.0 360.0 152.3   17.2   10.5   26.1
     2    9 A T        -     0   0   93      1,-0.1     2,-0.2    43,-0.0     0, 0.0  -0.668 360.0-129.4 -85.0 126.0   17.7    7.3   27.9
     3   10 A R        -     0   0  150     -2,-0.4     2,-0.3    44,-0.1    44,-0.1  -0.499  23.6-158.1 -77.0 146.5   16.9    4.1   26.0
