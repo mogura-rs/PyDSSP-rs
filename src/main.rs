@@ -2,7 +2,7 @@ use clap::Parser;
 use pydssp_rs::{assign, read_pdbtext};
 use ndarray::{Array1, Axis};
 use std::fs;
-use std::io::Write;
+use std::io::{self, Write};
 use std::path::PathBuf;
 
 #[derive(Parser, Debug)]
@@ -12,19 +12,22 @@ struct Args {
     #[arg(required = true)]
     input: Vec<PathBuf>,
 
-    /// Output result file
+    /// Output result file (optional, defaults to stdout)
     #[arg(short, long)]
-    output: PathBuf,
+    output: Option<PathBuf>,
 }
 
 fn main() {
     let args = Args::parse();
 
-    // Check if input is only one and it is a list of PDB files?
-    // But clap handles Vec<PathBuf>.
-    // User requested: `dssp input_01.pdb input_02.pdb ... -o output.result`
-
-    let mut outfile = fs::File::create(&args.output).expect("Failed to create output file");
+    // Determine output: File or Stdout
+    let mut writer: Box<dyn Write> = match args.output {
+        Some(path) => {
+            let file = fs::File::create(path).expect("Failed to create output file");
+            Box::new(file)
+        }
+        None => Box::new(io::stdout()),
+    };
 
     for input_path in args.input {
         let filename = input_path.to_string_lossy().to_string();
@@ -60,9 +63,9 @@ fn main() {
                 }
 
                 // Format: > filename \n sequence \n ss_string
-                writeln!(outfile, "> {}", filename).unwrap();
-                writeln!(outfile, "{}", sequence).unwrap();
-                writeln!(outfile, "{}", ss_string).unwrap();
+                writeln!(writer, "> {}", filename).unwrap();
+                writeln!(writer, "{}", sequence).unwrap();
+                writeln!(writer, "{}", ss_string).unwrap();
             }
             Err(e) => {
                 eprintln!("Failed to read {}: {}", filename, e);
