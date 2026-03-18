@@ -1,4 +1,4 @@
-# dssp-rs
+# PyDSSP-rs
 
 A Rust implementation of the DSSP algorithm, ported from [PyDSSP](https://github.com/ShintaroMinami/PyDSSP).
 
@@ -16,8 +16,8 @@ This project provides a fast and efficient way to assign secondary structures to
 Ensure you have Rust installed.
 
 ```bash
-git clone https://github.com/mogura-rs/dssp-rs.git
-cd dssp-rs
+git clone https://github.com/mogura-rs/PyDSSP-rs.git
+cd PyDSSP-rs
 cargo build --release
 ```
 
@@ -42,16 +42,16 @@ cargo run --bin dssp -- input.pdb -o output.result
 
 ### Library
 
-Add `dssp-rs` to your `Cargo.toml`.
+Add `pydssp-rs` to your `Cargo.toml`.
 
 ```toml
 [dependencies]
-dssp-rs = { git = "https://github.com/mogura-rs/dssp-rs" }
+pydssp-rs = { git = "https://github.com/mogura-rs/PyDSSP-rs" }
 ndarray = "0.17.2"
 ```
 
 ```rust
-use dssp_rs::{read_pdbtext, assign};
+use pydssp_rs::{read_pdbtext, assign};
 use ndarray::Axis;
 
 fn main() {

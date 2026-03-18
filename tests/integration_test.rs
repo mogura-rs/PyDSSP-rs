@@ -1,5 +1,5 @@
 use ndarray::prelude::*;
-use dssp_rs::{assign, read_pdbtext};
+use pydssp_rs::{assign, read_pdbtext};
 use std::fs;
 use std::path::Path;
 
